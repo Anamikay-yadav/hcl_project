@@ -1,0 +1,11 @@
+column_name,data_type,description,expected_values_or_format
+review_id,string,Unique identifier assigned to a customer review,Non-empty identifier such as BM00001
+review_date,datetime,Date and time associated with the review,YYYY-MM-DD HH:MM:SS
+customer_review,string,Customer review text used for sentiment analysis,Free text
+sentiment,categorical,Sentiment label associated with the review,Positive; Neutral; Negative
+rating,integer,Customer rating for the reviewed service,1 to 5
+category,categorical,Service or banking topic associated with the review,Category name
+channel,categorical,Channel through which the customer interacted,Channel name
+location,string,Location associated with the review,Location name
+language,categorical,Language of the customer review,Language name
+is_anomaly,boolean,Flag indicating whether the record is marked as an anomaly,True or False

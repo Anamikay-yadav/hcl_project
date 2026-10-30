@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+
+  --color-navy-950: #071a30;
+  --color-navy-900: #0b2545;
+  --color-navy-800: #12335c;
+  --color-navy-700: #1b4478;
+  --color-navy-600: #245a9c;
+  --color-blue-500: #3b78bf;
+  --color-blue-200: #c9dcf2;
+  --color-blue-100: #e3edf9;
+  --color-blue-50: #f1f6fc;
+
+  --color-ink: #14243b;
+  --color-ink-muted: #51627c;
+  --color-ink-faint: #7a8aa3;
+  --color-line: #dde4ee;
+  --color-canvas: #f4f7fb;
+
+  --color-pos: #17855e;
+  --color-neu: #7a8ca8;
+  --color-neg: #c0463c;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+@utility card { @apply bg-white border border-line rounded-lg; }
+@utility card-title { @apply text-sm font-semibold text-ink; }
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 h-9 px-4 rounded-md text-sm font-medium
+    transition-colors disabled:opacity-50 disabled:cursor-not-allowed
+    focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy-600;
+}
+@utility btn-primary { @apply btn bg-navy-800 text-white hover:bg-navy-700; }
+@utility btn-secondary { @apply btn bg-white text-ink border border-line hover:bg-blue-50; }
+@utility btn-danger { @apply btn bg-neg text-white hover:bg-[#a63b32]; }
+
+@utility field {
+  @apply w-full rounded-md border border-line bg-white px-3 text-sm text-ink
+    placeholder:text-ink-faint focus:outline-none focus:border-navy-600 focus:ring-2 focus:ring-blue-200;
+}
+@utility label { @apply block text-xs font-medium text-ink-muted mb-1.5; }
+
+@utility table-head { @apply px-4 py-2.5 text-left text-xs font-medium text-ink-muted bg-blue-50 border-b border-line whitespace-nowrap; }
+@utility table-cell { @apply px-4 py-3 text-sm text-ink border-b border-line align-middle; }
+
+.tabular { font-variant-numeric: tabular-nums; }
